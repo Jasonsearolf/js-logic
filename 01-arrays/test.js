@@ -1,29 +1,25 @@
 
 
-const suspenso = (arr) => {
+const substrings = (palabra) => {
 
-    let aprobados = 0;
-    let suspensos = 0;
+    let substrings = [];
 
-    for(let alumno of arr){
-        if(alumno[1] >= 5){
-            aprobados++;
-        }else{
-            suspensos++;
+    for(let letra in palabra){
+        
+        let comienzo = parseInt(letra);
+
+        console.log(comienzo);
+
+        for (let i = 0; i <= palabra.length - comienzo; i++) {
+            
+            let final = parseInt(i) + parseInt(comienzo);
+
+            substrings.push(palabra.substring(comienzo, final));
+            
         }
     }
-    
-    return{
-        'aprobados': aprobados,
-        'suspensos': suspensos
-    }
+
+    return substrings.filter(palabra => palabra.length > 1);
 }
 
-
-console.log(suspenso([
-
-    ['Jose' , 1],
-    ['Pedro', 5],
-    ['Juan' , 10],
-    ['Ana'  , 7],
-]));
+console.log(substrings("hola"));bsssss
