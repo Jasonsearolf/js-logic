@@ -18,7 +18,6 @@ const bucles = (numeros) => {
 
     return bucleCounter;
 
-
 }
 
 console.log(bucles(18896));
